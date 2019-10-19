@@ -25,7 +25,7 @@ SECRET_KEY = 'i!op32ca+(6c7h=8n$9b$9#k-1di4n-*4-!ktb=acs$&g+ejfi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'refashion',
+    'crispy_forms',
 ]
+
+AUTH_USER_MODEL = 'refashion.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +54,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'hackathon.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4' 
 
 TEMPLATES = [
     {
@@ -106,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'EST'
 
 USE_I18N = True
 
@@ -119,3 +124,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# login 
+LOGIN_REDIRECT_URL = '../../'
+
+#redirect to login page
+LOGOUT_REDIRECT_URL = 'login'
+
+# DATE_FORMAT = "Y-m-d"
