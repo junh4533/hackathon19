@@ -22,14 +22,15 @@
 <body>
 
 {% block content %}
-<main>
-<form id="" method="post" action="" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-info">Confirm Donation</button>
-    </form>
-</main>
+  <main>
+  <form id="" method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <br><br><br><br><br>
+    <button type="submit" class="btn btn-success btn-block">Confirm Donation</button>
+  </form>
+  </main>
    
-  {% endblock %}
+{% endblock %}
 </body>
 </html>

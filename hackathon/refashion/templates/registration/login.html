@@ -27,9 +27,11 @@
   <div> 
      <img src="{% static 'images/banner.png' %}">
      <br> <br>
+     <h3> Go Green, Save Green </h3>
+     <br> <br>
     <form id="login_form" method="post" action="" enctype="multipart/form-data">{% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-success">Login</button>
+        {{ form|crispy }} <br>
+        <button type="submit" class="btn btn-success btn-block">Login</button>
     </form>
   </div>
    

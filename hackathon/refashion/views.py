@@ -59,21 +59,36 @@ def rewards(request):
 def redeem(request):
     if request.method == 'GET':
         balance = Customer.objects.get(customer_id=request.user.customer.customer_id).points_balance
+        progress_width = (balance/100)
+        if progress_width >= 1:
+            progress_width = 100
+        else:
+            progress_width = balance
         args ={
-            "balance":balance,
+            "balance":balance, 
+            "progress_width": progress_width,
         }
         return render(request, 'refashion/redeem.html', args)     
     elif request.method == 'POST':
         balance = Customer.objects.get(customer_id=request.user.customer.customer_id).points_balance
-        Customer.objects.filter(customer_id=request.user.customer.customer_id).update(points_balance=balance-100) #subtract 100 points to redeem coupon
-        Redemption.objects.create(user=request.user,coupon_code=random.randint(10000000,99999999))
-        success = "redeemed 100 points"
-        args = {'success':success}
-        # return render(request, 'refashion/rewards.html', args)
-        # return rewards(request)
-        return redirect('rewards')
-        # return render(request, '../rewards', args)    
-
+        if balance >= 100:
+            Customer.objects.filter(customer_id=request.user.customer.customer_id).update(points_balance=balance-100) #subtract 100 points to redeem coupon
+            Redemption.objects.create(user=request.user,coupon_code=random.randint(10000000,99999999))
+            return redirect('rewards') 
+        else:
+            balance = Customer.objects.get(customer_id=request.user.customer.customer_id).points_balance
+            progress_width = (balance/100)
+            if progress_width >= 1:
+                progress_width = 100
+            else:
+                progress_width = balance
+            error = "Insufficient points!"
+            args ={
+            "balance":balance, 
+            "progress_width": progress_width,
+            "error":error
+        }
+        return render(request, 'refashion/redeem.html', args)   
 
 def profile(request):
     return render(request, 'refashion/profile.html')

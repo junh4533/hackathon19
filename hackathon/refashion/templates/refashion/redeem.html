@@ -45,16 +45,24 @@
       </nav>
    <main>
    <div id="container"> 
-    <h1 id="page"> Redeem Your Points!</h1>
-    <h1 id="balance"> Balance: {{balance}}  </h1>
+    {% comment %} <h1 id="page"> Redeem Your Points!</h1> {% endcomment %}
+    <h1 id="balance"> {{balance}}  </h1>
+    <h5 id="points">Points<h5>
+     <br>
     <div class="progress">
-      <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width:100%"></div>
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width:{{progress_width}}%">{{progress_width}}%</div>
     </div>
     <br>
     <form id="" method="post" action="">
       {% csrf_token %}
-      <button type="submit" class="btn btn-success" id="btnColor">Redeem</button>
+      <button type="submit" class="btn btn-success btn-block" id="btnColor">Redeem</button>
     </form>
+  <br>
+    {% if error %}
+      <div class="alert alert-danger">
+        <strong>{{error}}</strong> 
+      </div>
+    {% endif %}
    </div>
     
    </main>
