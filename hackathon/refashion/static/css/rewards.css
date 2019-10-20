@@ -1,24 +1,15 @@
-h1 {
+/*  */
+h1{
     text-align: center;
 }
+#redemption_box{
+    width:80vw;
+}
 
-@font-face {
-    font-family: 'Chunk';
-    font-style: normal;
-    font-weight: normal;
-    src: url("Chunk.otf");
-  }
-  #brand {
-      font-family: 'Chunk';
-  }
-  #size {
-      width: 30vw;
-      text-align: center;
-  }
-  #bg{
-    position: absolute;
-    width:100vw;
-    z-index:-999;
-    top:35vh;
-    /* z-index: */
+#redemption_box *{
+    display: inline-block;
+}
+
+#redemption_box img{
+    width:20vw;
 }

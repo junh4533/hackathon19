@@ -17,7 +17,7 @@ class User(AbstractUser):
 
     #return the users' name
     def __str__(self):
-        return str(self.first_name) + " " + str(self.last_name)
+        return str(self.first_name) + " " + str(self.last_name) 
 
 class Address(models.Model):
     address_id = models.AutoField(unique=True, primary_key=True)
@@ -83,7 +83,7 @@ class Redemption(models.Model):
 
     #return the redeemer and store
     def __str__(self):
-        return str(self.user) + str(self.store)
+        return str(self.user) + str(self.coupon_code)
 
 
 

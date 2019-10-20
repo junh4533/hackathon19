@@ -6,3 +6,21 @@ body{
     background-size:cover;
     /* background-attachment: fixed; */
 }
+
+main{
+    height:90vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* font-family: 'Anton', sans-serif; */
+}
+
+/* @font-face {
+    font-family: 'Chunk';
+    font-style: normal;
+    font-weight: light;
+    src: url("../Chunk.otf");
+  }
+  #brand {
+      font-family: 'Chunk';
+  } */

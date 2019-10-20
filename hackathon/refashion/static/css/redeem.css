@@ -1,34 +1,6 @@
-/* # is id. ID has precedence over class & element */
-/* . is class */
 
-#page{
+
+#container{
     text-align: center;
-}
-#balance {
-    padding-top: 5vw;
-    text-align: center;
-}
-
-#btnColor {
-    background-color: #147037
-}
-
-.center{
-    text-align: center !important;
-}
-@font-face {
-    font-family: 'Chunk';
-    font-style: normal;
-    font-weight: normal;
-    src: url("Chunk.otf");
-  }
-  #brand {
-      font-family: 'Chunk';
-  }
-#bg{
-    position: absolute;
-    width:100vw;
-    z-index:-999;
-    top:35vh;
-    /* z-index: */
+    width:80vw;
 }

@@ -43,14 +43,20 @@
           </ul>
         </div>  
       </nav>
-    <img id="bg" src="{% static 'images/background.png' %}" alt="">
-  <h1>Rewards</h1>
-  <div id="size">
-  <h1>My coupons<h1>
+   <main>
+     <div id="size">
+  <h1>My coupons<h1> <br>
     {% for coupon in redemption %}
-    <h3>Code: {{coupon}}</h3>
+      <div id="redemption_box">
+        <img src="{% static 'images/uniqlo.png' %}">
+          <h4>Uniqlo</h4>
+          <h6>Code: {{coupon}}</h6>
+      </div>
+      <br>
     {% endfor %} 
 </div>
+   </main>
+ 
   {% endblock %}
 </body>
 </html>

@@ -21,14 +21,6 @@
       font-family: 'Chunk';
   }
 
-#bg{
-    position: absolute;
-    width:100vw;
-    z-index:-999;
-    top:35vh;
-    /* z-index: */
-}
-
 #main_content{
     text-align: center;
     background: #343A40;

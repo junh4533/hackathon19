@@ -8,31 +8,9 @@ from django.contrib.auth.models import User
 
 # forms
 from django.contrib.auth import update_session_auth_hash
-from refashion.forms import *
+from refashion.forms import * #import all forms
 
 import random
-
-# def login(request):
-#     print("hi")
-#     if request.method == "POST":
-#         form = LoginForm(request.POST)
-#         if form.is_valid():
-#             cd = form.cleaned_data
-#             user = authenticate(request, username=cd['username'], password=cd['password'])
-#             if request.user.is_authenticated:
-#                 if user_type=="retailer":
-#                     print("retailer")
-#                     login(request, user)
-#                     return redirect('retailer')
-#                 elif user_type=="customer":
-#                     print("customer")
-#                     login(request, user)
-#                     return redirect('customer/home') 
-#                 else:
-#                     return redirect('../admin') 
-#     else:
-#         form = LoginForm()
-#         return render(request,'registration/login.html',{'form':form})
 
 def customer(request):
     if request.method == 'GET':
@@ -60,6 +38,8 @@ def retailer(request):
             args = {'failed':failed, "form":form}
             return render(request, 'refashion/retailer.html', args)
     else:
+        if request.user.user_type == "customer":
+            return redirect('customer') 
         form = DonateForm
         args = {'form':form}
         return render(request, 'refashion/retailer.html',args)
