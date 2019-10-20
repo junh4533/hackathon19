@@ -1,16 +1,21 @@
-/* h1 {
+/* # is id. ID has precedence over class & element */
+/* . is class */
+
+#page{
     text-align: center;
 }
-/* .back{
-    vertical-align: middle;
-    top: 35%;
+#balance {
+    padding-top: 5vw;
+    text-align: center;
 }
 
-.back img{
-    width: 100vw; 
-    position:absolute;
-} */
+#btnColor {
+    background-color: #147037
+}
 
+.center{
+    text-align: center !important;
+}
 @font-face {
     font-family: 'Chunk';
     font-style: normal;
@@ -20,7 +25,6 @@
   #brand {
       font-family: 'Chunk';
   }
-
 #bg{
     position: absolute;
     width:100vw;
@@ -28,9 +32,3 @@
     top:35vh;
     /* z-index: */
 }
-
-#main_content{
-    text-align: center;
-    background: #343A40;
-    /* color:red; */
-} 

@@ -1,0 +1,8 @@
+body{
+    width:100vw;
+    height:100vh;
+    background-image: linear-gradient(to top right, #67FF99,#0FE7F2);
+    background-repeat: no-repeat;
+    background-size:cover;
+    /* background-attachment: fixed; */
+}

@@ -1,15 +1,6 @@
-/* h1 {
+h1 {
     text-align: center;
 }
-/* .back{
-    vertical-align: middle;
-    top: 35%;
-}
-
-.back img{
-    width: 100vw; 
-    position:absolute;
-} */
 
 @font-face {
     font-family: 'Chunk';
@@ -20,17 +11,14 @@
   #brand {
       font-family: 'Chunk';
   }
-
-#bg{
+  #size {
+      width: 30vw;
+      text-align: center;
+  }
+  #bg{
     position: absolute;
     width:100vw;
     z-index:-999;
     top:35vh;
     /* z-index: */
 }
-
-#main_content{
-    text-align: center;
-    background: #343A40;
-    /* color:red; */
-} 

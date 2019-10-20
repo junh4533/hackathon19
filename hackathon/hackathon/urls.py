@@ -18,9 +18,10 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.urls import path, include
 from refashion import views
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('refashion.urls')), #app urls
     path('accounts/', include('django.contrib.auth.urls')), #login and logout
     path('admin/', admin.site.urls), #admin interface
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

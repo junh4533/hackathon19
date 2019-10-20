@@ -13,9 +13,10 @@
 </head>
 <body>
   {% block content %}
-     <form id="login_form" method="post" action="" enctype="multipart/form-data">{% csrf_token %}
+     <form id="" method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
         {{ form|crispy }}
-        <button type="submit" class="btn btn-info">Login</button>
+        <button type="submit" class="btn btn-info">Confirm Donation</button>
     </form>
     {% endblock %}
 </body>
